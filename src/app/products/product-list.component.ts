@@ -5,7 +5,11 @@ import { Component } from "@angular/core";
   templateUrl: './product-list.component.html'
 })
 export class ProductListComponent {
-  pageTitle: string = 'Product List';
+  pageTitle = 'Product List';
+  imageWidth = 50;
+  imageMargin = 2;
+  showImage = false;
+  listFilter = 'cart';
   products: any[] = [
     {
       "productId": 1,
@@ -15,7 +19,7 @@ export class ProductListComponent {
       "description": "Leaf rake with 48-inch wooden handle.",
       "price": 19.95,
       "starRating": 3.2,
-      "imageUrl": "assets/images/leaf_rake.png"
+      "imageUrl": 'assets/images/leaf_rake.png'
     },
     {
       "productId": 2,
@@ -58,4 +62,8 @@ export class ProductListComponent {
       "imageUrl": "assets/images/xbox-controller.png"
     }
   ];
+
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+  }
 }
